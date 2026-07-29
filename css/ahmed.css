@@ -535,7 +535,7 @@ a {
     border-style: solid;
     border-width: 0px 0px 170px 500px;
     border-color: transparent transparent white transparent;
-    transition: var(--main-transition);
+    transition: 0.3s;
 }
 
 .features .box .img-holder img {
@@ -543,7 +543,8 @@ a {
 }
 
 .features .box:hover .img-holder::after {
-    border-width: 170px 355px 170px 0px;
+    border-width: 0px 500px 170px 0px;
+    left: 0;
 }
 
 .features .box h2 {
@@ -582,14 +583,16 @@ a {
     padding: 10px 30px;
 }
 
-.features .quality .img-holder::before{
+.features .quality .img-holder::before {
     background-color: #f44036;
     opacity: 0.6;
 }
-.features .quality h2::after{
+
+.features .quality h2::after {
     background-color: #f44036;
 }
-.features .quality a{
+
+.features .quality a {
     color: #f44036;
     border-color: #f44036;
     background: linear-gradient(to right, #f44036 50%, white 50%);
@@ -597,14 +600,17 @@ a {
     background-position: right bottom;
     transition: var(--main-transition);
 }
-.features .time .img-holder::before{
+
+.features .time .img-holder::before {
     background-color: #009688;
     opacity: 0.6;
 }
-.features .time h2::after{
+
+.features .time h2::after {
     background-color: #009688;
 }
-.features .time a{
+
+.features .time a {
     color: #009688;
     border-color: #009688;
     background: linear-gradient(to right, #009688 50%, white 50%);
@@ -612,14 +618,17 @@ a {
     background-position: right bottom;
     transition: var(--main-transition);
 }
-.features .passion .img-holder::before{
+
+.features .passion .img-holder::before {
     background-color: #03a9f4;
     opacity: 0.6;
 }
-.features .passion h2::after{
+
+.features .passion h2::after {
     background-color: #03a9f4;
 }
-.features .passion a{
+
+.features .passion a {
     color: #03a9f4;
     border-color: #03a9f4;
     background: linear-gradient(to right, #03a9f4 50%, white 50%);
@@ -627,11 +636,237 @@ a {
     background-position: right bottom;
     transition: var(--main-transition);
 }
-.features .box:hover a{
+
+.features .box:hover a {
     background-position: left bottom;
     color: white;
 }
+
 /* End Features */
+/* Start Testimonials */
+.testimonials {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonials .box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 15px 4px;
+    position: relative;
+}
+
+.testimonials .box img {
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    right: -10px;
+    top: -50px;
+    border: 10px solid var(--section-background);
+}
+
+.testimonials .box h3 {
+    margin-bottom: 10px;
+}
+
+.testimonials .box .title {
+    color: #777;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.testimonials .box p {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #777;
+}
+
+.testimonials .box .rate .filled {
+    color: #ffc107;
+}
+
+/* End Testimonials */
+/* Start Team */
+.team {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+
+.team .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.team .box {
+    position: relative;
+}
+
+.team .box::before,
+.team .box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    height: 100%;
+    transition: var(--main-transition);
+}
+
+.team .box::before {
+    background-color: #f3f3f3;
+    width: calc(100% - 60px);
+    z-index: -2;
+}
+
+@media (max-width: 682px) {
+    .team .box::before {
+        width: 100%;
+    }
+}
+
+.team .box::after {
+    background-color: #e4e4e4;
+    width: 0;
+    z-index: -1;
+}
+
+.team .box:hover::after {
+    width: calc(100% - 60px);
+}
+
+@media (max-width: 682px) {
+    .team .box:hover::after {
+        width: 100%;
+    }
+}
+
+.team .box .data {
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 682px) {
+    .team .box .data {
+        padding-top: 0;
+        display: block;
+    }
+}
+
+.team .box .data .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    gap: 20px;
+}
+
+@media (max-width: 682px) {
+    .team .box .data .social {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        margin: 0 auto;
+        ;
+        justify-content: space-between;
+    }
+}
+
+.team .box .data .social a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    color: #777;
+    transition: var(--main-transition);
+}
+
+@media (max-width: 682px) {
+    .team .box .data .social a {
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+    }
+}
+
+.team .box .data .social a:hover {
+    color: var(--main-color);
+}
+
+.team .box .data img {
+    width: calc(100% - 60px);
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+
+@media (max-width: 682px) {
+    .team .box .data img {
+        width: 100%;
+        padding: 25px;
+        border-radius: 35px;
+    }
+}
+
+.team .box:hover .data img {
+    filter: grayscale(100%);
+}
+
+.team .info {
+    padding-left: 80px;
+}
+
+.team .info h3 {
+    color: var(--main-color);
+    margin-top: 22px;
+    font-size: 22px;
+    transition: var(--main-transition);
+}
+
+.team .box:hover .info h3 {
+    color: #777;
+}
+
+.team .info p {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+@media (max-width: 682px) {
+    .team .info {
+        padding: 0;
+        width: 50%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .team .info h3 {
+        color: var(--main-color);
+        margin-top: 16px;
+        font-size: 25px;
+        transition: var(--main-transition);
+    }
+
+    .team .info p {
+        margin-top: 10px;
+        margin-bottom: 25px;
+        font-size: 14px;
+    }
+}
+
+/* End Team */
 /* Start Animation */
 @keyframes up-and-down {
 
